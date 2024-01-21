@@ -19,6 +19,11 @@ export const socials = [
     icon: 'mdi:github',
     url: 'https://github.com/aliraza5490',
   },
+  {
+    title: 'Fiverr',
+    icon: 'simple-icons:fiverr',
+    url: 'https://www.fiverr.com/users/aliansari78692',
+  },
   // {
   //   title: 'Dribbble',
   //   icon: 'mdi:dribbble',
