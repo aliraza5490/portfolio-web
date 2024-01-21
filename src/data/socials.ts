@@ -20,8 +20,13 @@ export const socials = [
     url: 'https://github.com/aliraza5490',
   },
   {
+    title: 'LinkedIn',
+    icon: 'mdi:linkedin',
+    url: 'https://www.linkedin.com/in/aliraza5490',
+  },
+  {
     title: 'Fiverr',
-    icon: 'simple-icons:fiverr',
+    icon: 'jam:fiverr',
     url: 'https://www.fiverr.com/users/aliansari78692',
   },
   // {
