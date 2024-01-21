@@ -1,6 +1,6 @@
 export const settings = {
   site: 'https://aliwebdev.tech',
   name: 'Ali Web Developer',
-  title: 'Cannonball by Little Sticks | A splash page template',
-  description: 'This is a simple splash page template built with Astro by Little Sticks',
+  title: 'Ali Web Developer',
+  description: "Hi there! I'm Ali, a full-stack web developer with expertise in JavaScript, React, and Node.js. Currently, I am pursuing a Bachelor's degree in Computer Science from MNS University of Engineering and Technology, Multan, and I'm also working as a freelance web developer.",
 }
