@@ -1,71 +1,45 @@
+<h2 align="center">
+  <p>Personal website built with Astro</p>
+  <a href="https://vrus.vercel.app/" target="_blank">https://vrus.vercel.app/</a>
+</h2>
+
 <p align="center">
-  <img src="assets/gh-banner.png" alt="Cannonbal Theme Banner">
+Code is licensed under MIT, words and images are licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>CC BY-NC-SA 4.0</a>.
 </p>
 
-<br/>
-<div align="center">
-  <a href="https://twitter.com/littlesticksdev">
-  <img src="assets/twitter-badge.svg" alt="Follow Little Sticks on Twitter"/>
-</a>
-  <a href="https://littlesticks.lemonsqueezy.com/checkout/buy/ce15f246-6ffb-417d-b380-0745aeef69a9">
-    <img src="assets/sponsor-badge.svg" alt="Sponsor This Repo" />
-  </a>
-  <a href="https://littlesticks.dev/discord">
-    <img src="assets/discord-badge.svg" alt="Join our Discord" />
-  </a>
-  
-</div>
-<br/>
+## 🚀 Project Structure
 
-# Cannonball Splash Page 💦
+Inside of your Astro project, you'll see the following folders and files:
 
-This is a template for a modern splash page/coming soon page inspired by [this Framer template](https://coming-soon.framer.website/).
-
-You can learn more about this template/theme's creation in [this YouTube video](https://www.youtube.com/watch?v=o58kSpPMuuI)
-
-## Features
-
-- ✅ Modern Design
-- ✅ Email Signup Form
-- ✅ SEO friendly
-- ✅ Modern CSS Reset via Andy Bell
-- ✅ Fluid typography scaling via Utopia
-- ✅ Base and Page Layouts
-- ✅ A generic but flexible Button component
-- ✅ Automatic Sitemap
-
-## Get Started 
-
-Customize the global site settings such as the title and description in the `src/data/settings.ts` file
-
-Set your own social profile links and icons in the `src/data/socials.ts` file
-
-<p>
-  <a href="https://stackblitz.com/github/littlesticks/cannonball">
-  <img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" height="36px" />
-  </a>
-</p>
-
-OR
-
-## Local Development
-
-```sh
-npm i && npm start
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## Deploy
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Astro has [an in-depth guide](https://docs.astro.build/en/guides/deploy/) on how to deploy an Astro project to each service.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## Sponsor
+Any static assets, like images, can be placed in the `public/` directory.
 
-If you find this theme useful, please consider donating to support the continued development of it with the link below
+## 🧞 Commands
 
-[Donate to Little Sticks](https://littlesticks.lemonsqueezy.com/checkout/buy/ce15f246-6ffb-417d-b380-0745aeef69a9)
+All commands are run from the root of the project, from a terminal:
 
-## Support
-
-Please feel free to reach out to us on our Discord if you have questions or file an issue on the repo.
-
-[Join our Discord](https://littlesticks.dev/discord)
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm run build`           | Build your production site to `./dist/`          |
+| `pnpm run preview`         | Preview your build locally, before deploying     |
+| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run astro -- --help` | Get help using the Astro CLI                     |

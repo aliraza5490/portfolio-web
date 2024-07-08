@@ -1,37 +1,21 @@
-export const socials = [
-  // {
-  //   title: 'Instagram',
-  //   icon: 'mdi:instagram',
-  //   url: 'https://www.instagram.com/jaydanurwin/',
-  // },
-  // {
-  //   title: 'Twitter',
-  //   icon: 'mdi:twitter',
-  //   url: 'https://twitter.com/littlesticksdev',
-  // },
-  // {
-  //   title: 'YouTube',
-  //   icon: 'mdi:youtube',
-  //   url: 'https://youtube.com/c/LittleSticks',
-  // },
+import IconFiverr from '../components/icons/fiverr.astro';
+import IconGithub from '../components/icons/github.astro';
+import IconLinkedin from '../components/icons/linkedin.astro';
+
+export const SOCIALS = [
   {
-    title: 'GitHub',
-    icon: 'mdi:github',
+    name: 'Github',
     url: 'https://github.com/aliraza5490',
+    icon: IconGithub,
   },
   {
-    title: 'LinkedIn',
-    icon: 'mdi:linkedin',
+    name: 'Linkedin',
     url: 'https://www.linkedin.com/in/aliraza5490',
+    icon: IconLinkedin,
   },
   {
-    title: 'Fiverr',
-    icon: 'jam:fiverr',
+    name: 'Fiverr',
     url: 'https://www.fiverr.com/users/aliansari78692',
+    icon: IconFiverr,
   },
-  // {
-  //   title: 'Dribbble',
-  //   icon: 'mdi:dribbble',
-  //   url: 'https://dribbble.com/littlesticksdev',  
-  // }
-]
+];
