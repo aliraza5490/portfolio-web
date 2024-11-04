@@ -21,14 +21,4 @@ export const EXPERIENCE: ExperienceProp[] = [
     ],
     logo: '/logos/fiverr.png',
   },
-  {
-    dates: 'May 2023 — July 2023',
-    title: 'Backend Developer',
-    company: 'Tecudia',
-    companyUrl: 'https://www.linkedin.com/company/tecudia',
-    description:
-      'Developed APIs for a job listing application using Next.js pages router. Worked on integrating with the Elastic Search and implemented user authentication.',
-    technologies: ['Next.js', 'Elastic Search'],
-    logo: '/logos/tecudia.png',
-  },
 ];
