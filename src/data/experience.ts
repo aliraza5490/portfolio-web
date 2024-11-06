@@ -4,7 +4,7 @@ export const EXPERIENCE: ExperienceProp[] = [
   {
     dates: 'November 2020 — Present',
     title: 'Web Developer',
-    company: 'Fiverr (Freelancer)',
+    company: 'Fiverr',
     companyUrl: 'https://www.fiverr.com/users/aliansari78692',
     description:
       'Developed and maintained web applications and websites for clients on the Fiverr platform. Worked on projects ranging from simple landing pages to complex web applications. Collaborated with clients to understand their requirements and deliver the best possible solution.',
