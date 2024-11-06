@@ -1,9 +1,9 @@
 ---
-import Component from '../components/Component.astro';
-import Experience from '../components/experience/index.astro';
-import { EXPERIENCE } from '../data/experience';
-import { SOCIALS } from '../data/socials';
-import Layout from '../layouts/Layout.astro';
+import Component from "../components/Component.astro";
+import Experience from "../components/experience/index.astro";
+import { EXPERIENCE } from "../data/experience";
+import { SOCIALS } from "../data/socials";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Ali Web Developer">
@@ -33,18 +33,54 @@ import Layout from '../layouts/Layout.astro';
               <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400">
                 MERN Stack Developer
               </h2>
-
-              <a
-                data-ccursor
-                href="mailto:aliwebdev3986@proton.me"
-                class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4"
-              >
-                <span>Email Me</span>
-                <sapn
-                  class="w-2 h-2 rounded-full bg-green-400 duration-1000 animate-pulse"
+              <div class="flex items-center gap-4">
+                <a
+                  data-ccursor
+                  href="mailto:aliwebdev3986@proton.me"
+                  class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4"
                 >
-                </sapn>
-              </a>
+                  <span>Email Me</span>
+                  <sapn
+                    class="w-2 h-2 rounded-full bg-green-400 duration-1000 animate-pulse"
+                  >
+                  </sapn>
+                </a>
+
+                <a
+                  data-ccursor
+                  class="inline-flex items-center leading-tight text-neutral-200 font-semibold group p-2 rounded px-3 mt-4"
+                  aria-label="View Full Résumé"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href="./Ali-MERN-Stack-Dev.pdf"
+                >
+                  <span>
+                    <span
+                      class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+                    >
+                      View Full
+                    </span>
+                    <span class="whitespace-nowrap">
+                      <span
+                        class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+                      >
+                        Résumé
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
+                        aria-hidden="true"
+                        ><path
+                          fill-rule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                          clip-rule="evenodd"></path></svg
+                      ></span
+                    ></span
+                  ></a
+                >
+              </div>
             </div>
           </div>
 
@@ -122,43 +158,6 @@ import Layout from '../layouts/Layout.astro';
               <ol class="group/list space-y-12">
                 {EXPERIENCE.map((experience) => <Experience {...experience} />)}
               </ol>
-
-              <div class="mt-12">
-                <a
-                  data-ccursor
-                  class="inline-flex items-center leading-tight text-neutral-200 font-semibold group p-2 rounded px-3"
-                  aria-label="View Full Résumé"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="./Ali-MERN-Stack-Dev.pdf"
-                >
-                  <span>
-                    <span
-                      class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-                    >
-                      View Full
-                    </span>
-                    <span class="whitespace-nowrap">
-                      <span
-                        class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-                      >
-                        Résumé
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
-                        aria-hidden="true"
-                        ><path
-                          fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd"></path></svg
-                      ></span
-                    ></span
-                  ></a
-                >
-              </div>
             </div>
           </section>
           <footer class="max-w-md pb-16 text-sm text-neutral-500 sm:pb-0">
