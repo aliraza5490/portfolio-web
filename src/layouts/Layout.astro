@@ -17,6 +17,15 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.svg" />
     <title>{title}</title>
+    <script type="application/ld+json">
+    {
+    	"@context": "http://schema.org/",
+    	"@type": "Person",
+    	"name": "Ali Raza",
+    	"url": "https://aliwebdev.me",
+    	"sameAs": ["https://linkedin.com/in/aliraza5490"]
+    }
+    </script>
   </head>
 
   <body
