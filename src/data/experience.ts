@@ -2,7 +2,7 @@ import type { Props as ExperienceProp } from '../components/experience/props';
 
 export const EXPERIENCE: ExperienceProp[] = [
   {
-    dates: 'July 2020 — Present',
+    dates: 'July 2020 — Dec 2024',
     title: 'MERN Stack & Next.js Developer',
     company: 'Fiverr',
     companyUrl: 'https://www.fiverr.com/users/aliansari78692',
@@ -20,5 +20,25 @@ export const EXPERIENCE: ExperienceProp[] = [
       'Tailwind CSS',
     ],
     logo: '/logos/fiverr.png',
+  },
+  {
+    dates: 'January 2025 — Present',
+    title: 'Associate Software Engineer',
+    company: 'Cyberify',
+    companyUrl: 'https://cyberify.co',
+    description: `- Delivered AI-powered search and recommendation chatbot that improved product discovery and user engagement.
+- Developed reporting systems that enabled teams to generate PDF reports in seconds instead of hours.
+- Developed an AI driven system for property evaluation for real estate professionals by generating reports.
+- Created data processing and scraping pipelines, enabling faster and more reliable data availability for business use cases.`,
+    technologies: [
+      'PostgreSQL',
+      'Nest.js',
+      'React JS',
+      'Node JS',
+      'React Router V7',
+      'Tailwind CSS',
+      'ShadCN UI',
+    ],
+    logo: 'https://cyberify.co/assets/logo-zrqrwoNM.png',
   },
 ];
