@@ -2,26 +2,6 @@ import type { Props as ExperienceProp } from '../components/experience/props';
 
 export const EXPERIENCE: ExperienceProp[] = [
   {
-    dates: 'July 2020 — Dec 2024',
-    title: 'MERN Stack & Next.js Developer',
-    company: 'Fiverr',
-    companyUrl: 'https://www.fiverr.com/users/aliansari78692',
-    description:
-      'Developed and maintained web applications and websites for clients on the Fiverr platform. Worked on projects ranging from simple landing pages to complex web applications. Collaborated with clients to understand their requirements and deliver the best possible solution.',
-    technologies: [
-      'MongoDB',
-      'Express JS',
-      'React JS',
-      'Node JS',
-      'Next JS',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Tailwind CSS',
-    ],
-    logo: '/logos/fiverr.png',
-  },
-  {
     dates: 'January 2025 — Present',
     title: 'Associate Software Engineer',
     company: 'Cyberify',
@@ -40,5 +20,25 @@ export const EXPERIENCE: ExperienceProp[] = [
       'ShadCN UI',
     ],
     logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQH_h7aTbppkBg/company-logo_200_200/company-logo_200_200/0/1722329059070/cyberifyai_logo?e=1759968000&v=beta&t=PyFsaq-bRFbp4rwRN4ksGa6vkgtsc4FrtvMwMVj7-ZY',
+  },
+  {
+    dates: 'July 2020 — Dec 2024',
+    title: 'MERN Stack & Next.js Developer',
+    company: 'Fiverr',
+    companyUrl: 'https://www.fiverr.com/users/aliansari78692',
+    description:
+      'Developed and maintained web applications and websites for clients on the Fiverr platform. Worked on projects ranging from simple landing pages to complex web applications. Collaborated with clients to understand their requirements and deliver the best possible solution.',
+    technologies: [
+      'MongoDB',
+      'Express JS',
+      'React JS',
+      'Node JS',
+      'Next JS',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Tailwind CSS',
+    ],
+    logo: '/logos/fiverr.png',
   },
 ];
