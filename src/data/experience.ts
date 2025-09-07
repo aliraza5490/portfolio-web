@@ -25,7 +25,7 @@ export const EXPERIENCE: ExperienceProp[] = [
     dates: 'January 2025 — Present',
     title: 'Associate Software Engineer',
     company: 'Cyberify',
-    companyUrl: 'https://cyberify.co',
+    companyUrl: 'https://www.linkedin.com/in/aliraza5490',
     description: `- Delivered AI-powered search and recommendation chatbot that improved product discovery and user engagement.
 - Developed reporting systems that enabled teams to generate PDF reports in seconds instead of hours.
 - Developed an AI driven system for property evaluation for real estate professionals by generating reports.
@@ -39,6 +39,6 @@ export const EXPERIENCE: ExperienceProp[] = [
       'Tailwind CSS',
       'ShadCN UI',
     ],
-    logo: 'https://cyberify.co/assets/logo-zrqrwoNM.png',
+    logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQH_h7aTbppkBg/company-logo_200_200/company-logo_200_200/0/1722329059070/cyberifyai_logo?e=1759968000&v=beta&t=PyFsaq-bRFbp4rwRN4ksGa6vkgtsc4FrtvMwMVj7-ZY',
   },
 ];
