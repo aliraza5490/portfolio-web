@@ -19,7 +19,7 @@ export const EXPERIENCE: ExperienceProp[] = [
       'Tailwind CSS',
       'ShadCN UI',
     ],
-    logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQH_h7aTbppkBg/company-logo_200_200/company-logo_200_200/0/1722329059070/cyberifyai_logo?e=1759968000&v=beta&t=PyFsaq-bRFbp4rwRN4ksGa6vkgtsc4FrtvMwMVj7-ZY',
+    logo: 'https://cyberify.co/favicon.png',
   },
   {
     dates: 'July 2020 — Dec 2024',
