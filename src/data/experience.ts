@@ -19,7 +19,7 @@ export const EXPERIENCE: ExperienceProp[] = [
       'Tailwind CSS',
       'ShadCN UI',
     ],
-    logo: 'https://cyberify.co/favicon.png',
+    logo: '',
   },
   {
     dates: 'July 2020 — Dec 2024',
