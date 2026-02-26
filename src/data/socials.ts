@@ -13,9 +13,9 @@ export const SOCIALS = [
     url: 'https://www.linkedin.com/in/aliraza5490',
     icon: IconLinkedin,
   },
-  {
-    name: 'Fiverr',
-    url: 'https://www.fiverr.com/users/aliansari78692',
-    icon: IconFiverr,
-  },
+  // {
+  //   name: 'Fiverr',
+  //   url: 'https://www.fiverr.com/users/aliansari78692',
+  //   icon: IconFiverr,
+  // },
 ];
