@@ -1,6 +1,11 @@
 packages:
   - '.'
 
+allowBuilds:
+  '@tsparticles/engine': true
+  esbuild: true
+  sharp: true
+
 onlyBuiltDependencies:
   - '@tsparticles/engine'
   - esbuild
