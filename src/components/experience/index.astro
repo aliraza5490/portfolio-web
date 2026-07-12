@@ -55,17 +55,15 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
         </div>
       </h3>
       {
-        description.includes('\n') ? (
+        description.includes("\n") ? (
           <ul class="mt-2 text-sm leading-normal list-disc pl-4 space-y-2">
-            {description.split('\n').map((line) => {
-              const cleaned = line.trim().replace(/^-\s*/, '');
+            {description.split("\n").map((line) => {
+              const cleaned = line.trim().replace(/^-\s*/, "");
               return cleaned ? <li>{cleaned}</li> : null;
             })}
           </ul>
         ) : (
-          <p class="mt-2 text-sm leading-normal">
-            {description}
-          </p>
+          <p class="mt-2 text-sm leading-normal">{description}</p>
         )
       }
       {

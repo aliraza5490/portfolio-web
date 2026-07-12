@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "name": "Astro: Server-Side Debug",
+      "request": "launch",
+      "command": "pnpm run dev",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "name": "Astro: Client-Side Debug",
+      "request": "launch",
+      "url": "http://localhost:4321",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Astro: Full Debug (Server & Client)",
+      "configurations": ["Astro: Server-Side Debug", "Astro: Client-Side Debug"]
+    }
+  ]
+}

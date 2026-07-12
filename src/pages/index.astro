@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
     >
       <div class="lg:flex lg:justify-between lg:gap-4">
         <header
-          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
+          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24"
         >
           <div
             class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6"
@@ -40,13 +40,16 @@ import Layout from "../layouts/Layout.astro";
                   class="inline-flex items-center gap-x-2.5 rounded-full border border-white/10 bg-gradient-to-b from-neutral-800/80 to-neutral-900/90 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:from-neutral-700/80 hover:to-neutral-800/90 hover:border-white/20 hover:shadow-[0_0_25px_rgba(255,255,255,0.12)] group w-fit"
                 >
                   <span>Say Hello</span>
-                  <span class="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">👋</span>
+                  <span
+                    class="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
+                    >👋</span
+                  >
                 </a>
 
                 <a
                   data-ccursor
                   class="inline-flex items-center leading-tight text-neutral-300 hover:text-white font-semibold group py-2 px-3 rounded-full"
-                  aria-label="View Full Résumé"
+                  aria-label="View Résumé"
                   target="_blank"
                   rel="noreferrer noopener"
                   href="./Ali-Raza-Dev.pdf"
@@ -55,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
                     <span
                       class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
                     >
-                      View Full
+                      View
                     </span>
                     <span class="whitespace-nowrap">
                       <span
@@ -106,7 +109,7 @@ import Layout from "../layouts/Layout.astro";
           }
         </header>
 
-        <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+        <main id="content" class="pt-24 lg:w-[55%] lg:py-24">
           <section
             id="about"
             class="mb-10 scroll-mt-16 md:mb-16 lg:mb-20 lg:scroll-mt-24"
@@ -124,13 +127,14 @@ import Layout from "../layouts/Layout.astro";
             <div>
               <div class="mb-4 space-y-4">
                 <p>
-                  I enjoy building practical software that bridges intelligent automation with everyday usability. My experience includes developing data-driven tools such as web scrapers, reporting dashboards, and AI-powered CRM Applications. I focus on creating solutions that are reliable, efficient, and easy to use.
+                  I build AI-powered software, automation systems, and scalable
+                  web applications focused on performance, reliability, and
+                  great user experience.
                 </p>
 
                 <p>
                   Looking forward to new challenges and exciting collaborations!
                 </p>
-
               </div>
             </div>
           </section>
@@ -153,22 +157,42 @@ import Layout from "../layouts/Layout.astro";
               </ol>
             </div>
           </section>
-          <footer class="max-w-md pb-16 text-sm text-neutral-500 sm:pb-0">
+          <footer
+            class="max-w-md pb-16 text-xs text-neutral-500 sm:pb-0 leading-relaxed"
+          >
             <p>
               Designed in
               <a
                 href="https://www.figma.com/"
-                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 hover:underline"
+                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 transition-colors"
                 target="_blank"
                 rel="noreferrer">Figma</a
               >
-              and coded in
+              · Built with
               <a
-                href="https://code.visualstudio.com/"
-                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 hover:underline"
+                href="https://astro.build/"
+                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 transition-colors"
                 target="_blank"
-                rel="noreferrer">Visual Studio Code</a
-              >
+                rel="noreferrer">Astro</a
+              >,
+              <a
+                href="https://react.dev/"
+                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 transition-colors"
+                target="_blank"
+                rel="noreferrer">React</a
+              >,
+              <a
+                href="https://tailwindcss.com/"
+                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 transition-colors"
+                target="_blank"
+                rel="noreferrer">Tailwind CSS</a
+              >, and
+              <a
+                href="https://www.typescriptlang.org/"
+                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 transition-colors"
+                target="_blank"
+                rel="noreferrer">TypeScript</a
+              >.
             </p>
           </footer>
         </main>
