@@ -2,7 +2,7 @@ import type { Props as ExperienceProp } from '../components/experience/props';
 
 export const EXPERIENCE: ExperienceProp[] = [
   {
-    dates: 'January 2025 — Present',
+    dates: 'Jan 2025 — Present',
     title: 'Associate Software Engineer',
     company: 'Cyberify',
     companyUrl: 'https://www.linkedin.com/in/aliraza5490',
@@ -21,7 +21,7 @@ export const EXPERIENCE: ExperienceProp[] = [
     logo: '/logos/building.svg',
   },
   {
-    dates: 'July 2020 — Dec 2024',
+    dates: 'Jul 2020 — Dec 2024',
     title: 'MERN Stack & Next.js Developer',
     company: 'Fiverr',
     companyUrl: 'https://www.fiverr.com/users/aliansari78692',
