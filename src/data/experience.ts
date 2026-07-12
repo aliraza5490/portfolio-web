@@ -8,7 +8,7 @@ export const EXPERIENCE: ExperienceProp[] = [
     companyUrl: "https://www.linkedin.com/in/aliraza5490",
     description: `- Developed AI-powered search and recommendation chatbot that improved product discovery and user engagement.
 - Developed reporting systems that enabled teams to generate PDF reports in seconds instead of hours.
-- Developed an AI driven system for property evaluation for real estate professionals by generating reports.
+- Developed an AI driven system for property evaluation for real estate professionals.
 - Created data processing and scraping pipelines, enabling faster and more reliable data availability for business use cases.`,
     technologies: [
       "Python",
