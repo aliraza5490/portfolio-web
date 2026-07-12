@@ -11,6 +11,10 @@ export const EXPERIENCE: ExperienceProp[] = [
 - Developed an AI driven system for property evaluation for real estate professionals by generating reports.
 - Created data processing and scraping pipelines, enabling faster and more reliable data availability for business use cases.`,
     technologies: [
+      'Python',
+      'Golang',
+      'Redis',
+      'Kafka',
       'PostgreSQL',
       'Nest.js',
       'React JS',

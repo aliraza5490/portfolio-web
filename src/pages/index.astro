@@ -16,14 +16,14 @@ import Layout from "../layouts/Layout.astro";
           class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
         >
           <div
-            class="flex lg:items-start gap-4 flex-col lg:flex-row items-center text-center lg:text-left"
+            class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6"
           >
             <img
-              src="/avatar.jpg"
+              src="/avatar.png"
               alt="Ali Raza"
-              class="rounded-full w-16 h-16"
+              class="rounded-full w-24 h-24 lg:w-28 lg:h-28 object-cover border border-neutral-700/30 shadow-lg"
             />
-            <div>
+            <div class="flex flex-col items-center lg:items-start">
               <a
                 href="/"
                 class="text-4xl lg:text-5xl block font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50"
@@ -33,22 +33,22 @@ import Layout from "../layouts/Layout.astro";
               <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400">
                 Software Engineer
               </h2>
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 mt-4">
                 <a
                   data-ccursor
                   href="mailto:aliwebdev3986@proton.me"
-                  class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4"
+                  class="inline-flex transition-all border-neutral-700/50 hover:bg-neutral-400/20 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-4 py-2 items-center text-white font-semibold group text-sm gap-x-2"
                 >
-                  <span>Contact</span>
-                  <sapn
+                  <span>Email</span>
+                  <span
                     class="w-2 h-2 rounded-full bg-green-400 duration-1000 animate-pulse"
                   >
-                  </sapn>
+                  </span>
                 </a>
 
                 <a
                   data-ccursor
-                  class="inline-flex items-center leading-tight text-neutral-200 font-semibold group p-2 rounded px-3 mt-4"
+                  class="inline-flex items-center leading-tight text-neutral-300 hover:text-white font-semibold group py-2 px-3"
                   aria-label="View Full Résumé"
                   target="_blank"
                   rel="noreferrer noopener"
@@ -195,7 +195,7 @@ import Layout from "../layouts/Layout.astro";
 
   .hero {
     background-image: url(/pattern.svg);
-    background-position: top center;
+    background-position: top;
     background-repeat: no-repeat;
     overflow-y: visible;
     overflow-x: clip;
