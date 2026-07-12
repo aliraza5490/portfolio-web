@@ -6,4 +6,5 @@ export interface Props {
   description: string;
   technologies: string[];
   logo?: string;
+  isLast?: boolean;
 }

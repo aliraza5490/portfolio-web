@@ -152,8 +152,8 @@ import Layout from "../layouts/Layout.astro";
                 Experience
               </h2>
             </div><div>
-              <ol class="group/list space-y-12">
-                {EXPERIENCE.map((experience) => <Experience {...experience} />)}
+              <ol class="group/list">
+                {EXPERIENCE.map((experience, index) => <Experience {...experience} isLast={index === EXPERIENCE.length - 1} />)}
               </ol>
             </div>
           </section>
@@ -194,15 +194,14 @@ import Layout from "../layouts/Layout.astro";
                 rel="noreferrer">TypeScript</a
               >.
             </p>
+            <p class="mt-4">
+              {new Date().getFullYear()} All rights reserved.
+            </p>
           </footer>
         </main>
       </div>
     </div>
   </div>
-
-  <footer class="text-center py-4 text-xs">
-    {new Date().getFullYear()} All rights reserved.
-  </footer>
 </Layout>
 
 <style scoped>
