@@ -54,9 +54,20 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
           </a>
         </div>
       </h3>
-      <p class="mt-2 text-sm leading-normal">
-        {description}
-      </p>
+      {
+        description.includes('\n') ? (
+          <ul class="mt-2 text-sm leading-normal list-disc pl-4 space-y-2">
+            {description.split('\n').map((line) => {
+              const cleaned = line.trim().replace(/^-\s*/, '');
+              return cleaned ? <li>{cleaned}</li> : null;
+            })}
+          </ul>
+        ) : (
+          <p class="mt-2 text-sm leading-normal">
+            {description}
+          </p>
+        )
+      }
       {
         technologies.length && (
           <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">

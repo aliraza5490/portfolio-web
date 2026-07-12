@@ -6,7 +6,7 @@ export const EXPERIENCE: ExperienceProp[] = [
     title: 'Associate Software Engineer',
     company: 'Cyberify',
     companyUrl: 'https://www.linkedin.com/in/aliraza5490',
-    description: `- Delivered AI-powered search and recommendation chatbot that improved product discovery and user engagement.
+    description: `- Developed AI-powered search and recommendation chatbot that improved product discovery and user engagement.
 - Developed reporting systems that enabled teams to generate PDF reports in seconds instead of hours.
 - Developed an AI driven system for property evaluation for real estate professionals by generating reports.
 - Created data processing and scraping pipelines, enabling faster and more reliable data availability for business use cases.`,
@@ -14,12 +14,11 @@ export const EXPERIENCE: ExperienceProp[] = [
       'PostgreSQL',
       'Nest.js',
       'React JS',
-      'Node JS',
-      'React Router V7',
-      'Tailwind CSS',
-      'ShadCN UI',
+      'Kubernetes',
+      'Docker',
+      'AWS'
     ],
-    logo: '',
+    logo: '/logos/building.svg',
   },
   {
     dates: 'July 2020 — Dec 2024',
