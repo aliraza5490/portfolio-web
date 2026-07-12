@@ -3,7 +3,7 @@ import type { Props as ExperienceProp } from "../components/experience/props";
 export const EXPERIENCE: ExperienceProp[] = [
   {
     dates: "Jan 2025 — Present",
-    title: "Associate Software Engineer",
+    title: "Software Engineer",
     company: "Cyberify",
     companyUrl: "https://www.linkedin.com/in/aliraza5490",
     description: `- Developed AI-powered search and recommendation chatbot that improved product discovery and user engagement.
