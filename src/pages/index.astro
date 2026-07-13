@@ -33,7 +33,7 @@ import Layout from "../layouts/Layout.astro";
               <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400">
                 Software Engineer
               </h2>
-              <div class="flex items-center gap-4 mt-4">
+              <div class="flex flex-col md:flex-row items-center gap-6 md:gap-4 mt-4">
                 <a
                   data-ccursor
                   href="mailto:aliwebdev3986@proton.me"
@@ -218,8 +218,15 @@ import Layout from "../layouts/Layout.astro";
     background-image: url(/pattern.svg);
     background-position: top;
     background-repeat: no-repeat;
+    background-size: 100% auto;
     overflow-y: visible;
     overflow-x: clip;
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      background-size: auto;
+    }
   }
 
   /*
