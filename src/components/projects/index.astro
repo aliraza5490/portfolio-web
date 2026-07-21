@@ -1,0 +1,313 @@
+---
+import type { Props } from "./props";
+import IconArrow from "../icons/arrow.astro";
+
+const {
+  title,
+  summary,
+  bullets,
+  technologies,
+  image,
+  images,
+  projectUrl,
+  githubUrl,
+  isFeatured = false,
+  stats,
+  badges,
+} = Astro.props;
+
+// Determine demo CTA label
+const demoLabel = "Live Demo";
+const galleryImages = images && images.length ? images : [image];
+---
+
+<li class="mb-24 md:mb-32 lg:mb-36 last:mb-0">
+  {
+    isFeatured ? (
+      /* FEATURED PROJECT LAYOUT (Spans full width, larger screenshot) */
+      <div
+        class="group relative flex flex-col gap-6 pb-1 transition-all duration-300 hover:-translate-y-1.5 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 hover:backdrop-blur-sm"
+      >
+        <!-- Background hover card overlay -->
+        <div
+          class="absolute -inset-x-6 -inset-y-6 z-0 hidden rounded-xl transition motion-reduce:transition-none lg:block lg:group-hover:bg-neutral-800/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.05)] lg:group-hover:drop-shadow-lg"
+        />
+
+        <!-- Image Block (Full width, rounded, glow, pops, clickable for gallery) -->
+        <div
+          class="relative z-10 w-full overflow-hidden rounded-xl border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:border-white/20 transition-all duration-300 cursor-pointer group/thumb"
+          data-gallery-trigger
+          data-gallery-images={JSON.stringify(galleryImages)}
+          data-project-title={title}
+        >
+          <img
+            src={image}
+            alt={`${title} project preview`}
+            loading="lazy"
+            decoding="async"
+            class="w-full aspect-[21/9] object-cover transition-transform duration-500 group-hover/thumb:scale-[1.02]"
+          />
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-semibold text-sm backdrop-blur-[2px]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+            <span>View Gallery ({galleryImages.length})</span>
+          </div>
+        </div>
+
+        <!-- Content Block -->
+        <div class="z-10 px-1">
+          <!-- Badges -->
+          {badges && (
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              {badges.map((badge) => {
+                const isFeaturedBadge = badge.toLowerCase() === "featured";
+                return (
+                  <span class={`inline-flex items-center rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider ${
+                    isFeaturedBadge 
+                      ? "border border-amber-500/30 bg-amber-500/10 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.1)]" 
+                      : "border border-neutral-700 bg-neutral-900/50 text-neutral-400"
+                  }`}>
+                    {badge}
+                  </span>
+                );
+              })}
+            </div>
+          )}
+
+          <h3 class="text-2xl lg:text-3xl font-extrabold tracking-tight text-neutral-100">
+            <a
+              class="inline-flex items-baseline font-extrabold leading-tight text-neutral-100 hover:text-neutral-300 focus-visible:text-neutral-300 group/link"
+              href={projectUrl || githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={title}
+            >
+              <span>
+                {title}
+                <IconArrow />
+              </span>
+            </a>
+          </h3>
+
+          <p class="mt-2 text-[15px] font-medium text-neutral-300 leading-relaxed">
+            {summary}
+          </p>
+
+          <!-- Actions/CTAs directly under title/summary -->
+          <div class="mt-4 flex items-center gap-4 text-xs font-semibold">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="relative z-10 inline-flex items-center gap-1.5 text-neutral-300 hover:text-white transition-colors duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4 transition-colors" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+            )}
+            {projectUrl && (
+              <a
+                href={projectUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="relative z-10 inline-flex items-center gap-1.5 text-neutral-300 hover:text-white transition-colors duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd" d="M12.5 2.25a.75.75 0 01.75-.75h5a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0V3.56L11.28 9.78a.75.75 0 11-1.06-1.06l6.22-6.22h-3.94a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                </svg>
+                <span>{demoLabel}</span>
+              </a>
+            )}
+          </div>
+
+          <!-- Stats Row -->
+          {stats && (
+            <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-t border-neutral-800/80 pt-3 text-xs text-neutral-400">
+              {stats.map((stat) => (
+                <li class="flex items-center gap-1.5 bg-neutral-900/50 px-2.5 py-1 rounded border border-neutral-800">
+                  {stat.icon && <span>{stat.icon}</span>}
+                  <span class="font-medium text-neutral-300">{stat.text}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <!-- Bullet Description -->
+          <ul class="mt-4 space-y-2 text-sm text-neutral-400 list-none pl-0">
+            {bullets.map((bullet) => (
+              <li class="flex items-start gap-2.5 leading-relaxed">
+                <span class="text-neutral-500 mt-1.5 text-xs select-none">•</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Technologies Tag List (Clean, limited to 4) -->
+          {technologies.length && (
+            <ul class="mt-4 flex flex-wrap" aria-label="Technologies used">
+              {technologies.slice(0, 4).map((technology) => (
+                <li class="mr-1.5 mt-1.5">
+                  <div class="flex items-center backdrop-blur-sm rounded-full border border-neutral-800 shadow bg-neutral-400/10 px-2.5 py-0.5 text-[11px] font-medium leading-5 text-neutral-300">
+                    {technology}
+                  </div>
+                </li>
+              ))}
+              {technologies.length > 4 && (
+                <li class="mr-1.5 mt-1.5">
+                  <div class="flex items-center backdrop-blur-sm rounded-full border border-neutral-800 shadow bg-neutral-400/5 px-2 py-0.5 text-[11px] font-medium leading-5 text-neutral-400">
+                    +{technologies.length - 4} more
+                  </div>
+                </li>
+              )}
+            </ul>
+          )}
+        </div>
+      </div>
+    ) : (
+      /* REGULAR PROJECT LAYOUT (Side-by-side, 30-40% larger screenshots using sm:grid-cols-12 and 5:7 split) */
+      <div
+        class="group relative grid gap-4 pb-1 transition-all duration-300 hover:-translate-y-1.5 sm:grid-cols-12 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 hover:backdrop-blur-sm"
+      >
+        <!-- Background hover card overlay -->
+        <div
+          class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-xl transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-neutral-800/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.05)] lg:group-hover:drop-shadow-lg"
+        />
+
+        <!-- Image Column (Grid span: 5/12 for 30-40% larger thumbnail screenshots) -->
+        <div class="z-10 sm:col-span-5">
+          <div
+            class="relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.03)] group-hover:border-white/20 transition-all duration-300 sm:translate-y-1 cursor-pointer group/thumb"
+            data-gallery-trigger
+            data-gallery-images={JSON.stringify(galleryImages)}
+            data-project-title={title}
+          >
+            <img
+              src={image}
+              alt={`${title} project preview`}
+              loading="lazy"
+              decoding="async"
+              class="w-full aspect-video object-cover transition-transform duration-500 group-hover/thumb:scale-[1.02]"
+            />
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-medium text-xs backdrop-blur-[2px]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+              <span>View Gallery ({galleryImages.length})</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column (Grid span: 7/12) -->
+        <div class="z-10 sm:col-span-7">
+          <!-- Badges -->
+          {badges && (
+            <div class="flex flex-wrap gap-1.5 mb-1.5">
+              {badges.map((badge) => (
+                <span class="inline-flex items-center rounded border border-neutral-700 bg-neutral-900/50 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-neutral-400">
+                  {badge}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <h3 class="text-xl lg:text-2xl font-bold leading-snug text-neutral-200">
+            <a
+              class="inline-flex items-baseline font-bold leading-tight text-neutral-200 hover:text-neutral-300 focus-visible:text-neutral-300 group/link"
+              href={projectUrl || githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={title}
+            >
+              <span>
+                {title}
+                <IconArrow />
+              </span>
+            </a>
+          </h3>
+
+          <p class="mt-2 text-[15px] font-medium text-neutral-300 leading-relaxed">
+            {summary}
+          </p>
+
+          <!-- Actions/CTAs directly under title/summary -->
+          <div class="mt-3 flex items-center gap-3.5 text-xs font-semibold">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="relative z-10 inline-flex items-center gap-1.5 text-neutral-300 hover:text-white transition-colors duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+            )}
+            {projectUrl && (
+              <a
+                href={projectUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="relative z-10 inline-flex items-center gap-1.5 text-neutral-300 hover:text-white transition-colors duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd" d="M12.5 2.25a.75.75 0 01.75-.75h5a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0V3.56L11.28 9.78a.75.75 0 11-1.06-1.06l6.22-6.22h-3.94a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                </svg>
+                <span>{demoLabel}</span>
+              </a>
+            )}
+          </div>
+
+          <!-- Stats Row -->
+          {stats && (
+            <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-neutral-400 border-t border-neutral-800/80 pt-2.5">
+              {stats.map((stat) => (
+                <li class="flex items-center gap-1">
+                  {stat.icon && <span>{stat.icon}</span>}
+                  <span class="font-medium text-neutral-300">{stat.text}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <!-- Bullet Description -->
+          <ul class="mt-3 space-y-1.5 text-sm text-neutral-400 list-none pl-0">
+            {bullets.map((bullet) => (
+              <li class="flex items-start gap-2 leading-relaxed">
+                <span class="text-neutral-500 mt-1.5 text-[10px] select-none">•</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Technologies Tag List (Clean, limited to 4) -->
+          {technologies.length && (
+            <ul class="mt-3.5 flex flex-wrap" aria-label="Technologies used">
+              {technologies.slice(0, 4).map((technology) => (
+                <li class="mr-1.5 mt-1.5">
+                  <div class="flex items-center backdrop-blur-sm rounded-full border border-neutral-800 shadow bg-neutral-400/10 px-2.5 py-0.5 text-[10px] font-medium leading-5 text-neutral-300">
+                    {technology}
+                  </div>
+                </li>
+              ))}
+              {technologies.length > 4 && (
+                <li class="mr-1.5 mt-1.5">
+                  <div class="flex items-center backdrop-blur-sm rounded-full border border-neutral-800 shadow bg-neutral-400/5 px-2 py-0.5 text-[10px] font-medium leading-5 text-neutral-400">
+                    +{technologies.length - 4} more
+                  </div>
+                </li>
+              )}
+            </ul>
+          )}
+        </div>
+      </div>
+    )
+  }
+</li>

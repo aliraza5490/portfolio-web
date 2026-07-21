@@ -1,0 +1,211 @@
+---
+---
+
+<div
+  id="gallery-modal"
+  class="fixed inset-0 z-50 hidden flex-col items-center justify-between p-2 sm:p-4 bg-black/95 backdrop-blur-xl transition-opacity duration-300 select-none opacity-0"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Image Gallery Modal"
+>
+  <!-- Top Bar -->
+  <div class="w-full max-w-6xl flex items-center justify-between z-30 text-neutral-300 py-1 px-1 sm:px-2 shrink-0">
+    <div class="flex items-center gap-2 sm:gap-3">
+      <span id="gallery-title" class="font-bold text-base sm:text-lg md:text-xl text-white truncate max-w-[180px] sm:max-w-none">Project Screenshots</span>
+      <span id="gallery-counter" class="text-[10px] sm:text-xs bg-neutral-800 border border-neutral-700/60 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-neutral-400 font-medium shrink-0">1 / 1</span>
+    </div>
+    
+    <button
+      id="gallery-close"
+      type="button"
+      class="p-1.5 sm:p-2 rounded-full bg-neutral-800/80 hover:bg-neutral-700 text-neutral-300 hover:text-white transition-colors border border-neutral-700/50 shadow-md focus:outline-none shrink-0"
+      aria-label="Close modal (Esc)"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Main Image Container with Nav Buttons -->
+  <div class="relative w-full max-w-6xl flex-1 min-h-0 flex items-center justify-center my-1 sm:my-2 group">
+    <!-- Previous Button -->
+    <button
+      id="gallery-prev"
+      type="button"
+      class="absolute left-1 sm:left-4 z-40 p-2 sm:p-3 rounded-full bg-neutral-900/90 hover:bg-neutral-800 text-white transition-all border border-neutral-700/80 shadow-2xl opacity-90 hover:opacity-100 hover:scale-110 focus:outline-none"
+      aria-label="Previous image"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- Image Display Container (Strictly fits inside flex container on all screen sizes) -->
+    <div
+      id="gallery-img-wrapper"
+      class="relative w-full h-full min-h-0 flex items-center justify-center overflow-y-auto rounded-xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.9)] bg-neutral-950/60 p-1"
+    >
+      <img
+        id="gallery-main-img"
+        src=""
+        alt="Gallery slide"
+        class="max-h-full max-w-full h-auto w-auto object-contain transition-all duration-200 rounded-lg"
+      />
+    </div>
+
+    <!-- Next Button -->
+    <button
+      id="gallery-next"
+      type="button"
+      class="absolute right-1 sm:right-4 z-40 p-2 sm:p-3 rounded-full bg-neutral-900/90 hover:bg-neutral-800 text-white transition-all border border-neutral-700/80 shadow-2xl opacity-90 hover:opacity-100 hover:scale-110 focus:outline-none"
+      aria-label="Next image"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Bottom Thumbnail Strip -->
+  <div id="gallery-thumbs" class="w-full max-w-6xl flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto py-1 z-30 shrink-0 min-h-[48px] sm:min-h-[56px]">
+  </div>
+</div>
+
+<script>
+  let currentImages: string[] = [];
+  let currentIndex = 0;
+  let currentTitle = "";
+
+  const modal = document.getElementById("gallery-modal");
+  const mainImg = document.getElementById("gallery-main-img") as HTMLImageElement | null;
+  const imgWrapper = document.getElementById("gallery-img-wrapper");
+  const titleEl = document.getElementById("gallery-title");
+  const counterEl = document.getElementById("gallery-counter");
+  const thumbsContainer = document.getElementById("gallery-thumbs");
+  const closeBtn = document.getElementById("gallery-close");
+  const prevBtn = document.getElementById("gallery-prev");
+  const nextBtn = document.getElementById("gallery-next");
+
+  function openGallery(images: string[], title: string, initialIndex = 0) {
+    if (!images || images.length === 0 || !modal || !mainImg) return;
+    currentImages = images;
+    currentTitle = title || "Project Screenshots";
+    currentIndex = initialIndex;
+
+    updateGallery();
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    requestAnimationFrame(() => {
+      modal.classList.remove("opacity-0");
+      modal.classList.add("opacity-100");
+    });
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeGallery() {
+    if (!modal) return;
+    modal.classList.remove("opacity-100");
+    modal.classList.add("opacity-0");
+    setTimeout(() => {
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }, 300);
+  }
+
+  function updateGallery() {
+    if (!mainImg || currentImages.length === 0) return;
+    mainImg.src = currentImages[currentIndex];
+    if (imgWrapper) {
+      imgWrapper.scrollTop = 0;
+    }
+    
+    if (titleEl) titleEl.textContent = currentTitle;
+    if (counterEl) counterEl.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+
+    // Hide navigation arrows if only 1 image
+    if (prevBtn) prevBtn.style.display = currentImages.length > 1 ? "block" : "none";
+    if (nextBtn) nextBtn.style.display = currentImages.length > 1 ? "block" : "none";
+
+    // Render Thumbnail Strip
+    if (thumbsContainer) {
+      thumbsContainer.innerHTML = "";
+      if (currentImages.length > 1) {
+        currentImages.forEach((imgSrc, idx) => {
+          const thumbBtn = document.createElement("button");
+          thumbBtn.type = "button";
+          thumbBtn.className = `w-14 sm:w-16 h-10 sm:h-11 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+            idx === currentIndex ? "border-amber-400 ring-2 ring-amber-400/30 scale-105" : "border-neutral-700/60 opacity-50 hover:opacity-100"
+          }`;
+          thumbBtn.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover" alt="Thumbnail ${idx + 1}" />`;
+          thumbBtn.addEventListener("click", () => {
+            currentIndex = idx;
+            updateGallery();
+          });
+          thumbsContainer.appendChild(thumbBtn);
+        });
+      }
+    }
+  }
+
+  function nextSlide() {
+    if (currentImages.length <= 1) return;
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    updateGallery();
+  }
+
+  function prevSlide() {
+    if (currentImages.length <= 1) return;
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    updateGallery();
+  }
+
+  // Event Listeners
+  closeBtn?.addEventListener("click", closeGallery);
+  nextBtn?.addEventListener("click", nextSlide);
+  prevBtn?.addEventListener("click", prevSlide);
+
+  // Close on backdrop click
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeGallery();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (!modal || modal.classList.contains("hidden")) return;
+    if (e.key === "Escape") closeGallery();
+    if (e.key === "ArrowRight") nextSlide();
+    if (e.key === "ArrowLeft") prevSlide();
+  });
+
+  function setupTriggers() {
+    document.querySelectorAll("[data-gallery-trigger]").forEach((trigger) => {
+      trigger.removeEventListener("click", handleTriggerClick);
+      trigger.addEventListener("click", handleTriggerClick);
+    });
+  }
+
+  function handleTriggerClick(this: Element, e: Event) {
+    e.preventDefault();
+    e.stopPropagation();
+    const imagesAttr = this.getAttribute("data-gallery-images");
+    const titleAttr = this.getAttribute("data-project-title");
+    if (imagesAttr) {
+      try {
+        const images = JSON.parse(imagesAttr);
+        openGallery(images, titleAttr || "Project Screenshots");
+      } catch (err) {
+        console.error("Failed to parse gallery images", err);
+      }
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupTriggers);
+  } else {
+    setupTriggers();
+  }
+</script>
