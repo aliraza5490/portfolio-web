@@ -44,6 +44,27 @@ export const PROJECTS: ProjectProp[] = [
       { icon: "🛡️", text: "Reliable Event Delivery" }
     ],
     badges: ["Developer Tool", "Event-Driven"]
+  },
+  {
+    title: "House Prices EDA",
+    summary:
+      "Exploratory Data Analysis and predictive regression modeling pipeline for estimating residential home prices using feature engineering and XGBoost.",
+    bullets: [
+      "Performed comprehensive Exploratory Data Analysis (EDA) to uncover key feature correlations, distribution skewness, and missing data patterns.",
+      "Applied target transformations and domain-specific feature engineering to optimize model convergence and predictive stability.",
+      "Trained XGBoost and comparative machine learning regression models to accurately forecast property valuation metrics."
+    ],
+    technologies: ["Python", "XGBoost", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "Seaborn"],
+    image: "/projects/hpeda-corr.png",
+    images: ["/projects/hpeda-corr.png", "/projects/hpeda-xgboost.png"],
+    githubUrl: "https://github.com/aliraza5490/HousePricesEDA",
+    isFeatured: false,
+    stats: [
+      { icon: "📊", text: "Correlation & EDA" },
+      { icon: "📈", text: "XGBoost Predictive Modeling" },
+      { icon: "🧹", text: "Feature Engineering" }
+    ],
+    badges: ["Data Science", "Machine Learning", "EDA"]
   }
 ];
 
