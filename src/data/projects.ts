@@ -35,6 +35,8 @@ export const PROJECTS: ProjectProp[] = [
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Figma", "UI/UX"],
     image: "/projects/positivus.png",
     images: ["/projects/positivus.png"],
+    projectUrl: "https://lighthearted-paprenjak-6c5107.netlify.app/",
+    githubUrl: "https://github.com/aliraza5490/positivus-landing-page",
     isFeatured: false,
     stats: [
       { icon: "🎯", text: "Agency Landing Page" },
@@ -55,6 +57,8 @@ export const PROJECTS: ProjectProp[] = [
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Figma", "UI/UX"],
     image: "/projects/iexec.png",
     images: ["/projects/iexec.png"],
+    projectUrl: "https://lighthearted-paprenjak-6c5107.netlify.app/",
+    githubUrl: "https://github.com/aliraza5490/inext-modern-product-launch",
     isFeatured: false,
     stats: [
       { icon: "🎨", text: "Figma to Code" },
