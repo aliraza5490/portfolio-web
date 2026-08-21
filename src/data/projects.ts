@@ -35,7 +35,7 @@ export const PROJECTS: ProjectProp[] = [
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Figma", "UI/UX"],
     image: "/projects/positivus.png",
     images: ["/projects/positivus.png"],
-    projectUrl: "https://lighthearted-paprenjak-6c5107.netlify.app/",
+    projectUrl: "https://jovial-biscuit-ffc6e7.netlify.app/",
     githubUrl: "https://github.com/aliraza5490/positivus-landing-page",
     isFeatured: false,
     stats: [
