@@ -24,6 +24,46 @@ export const PROJECTS: ProjectProp[] = [
     badges: ["Featured", "AI", "Agentic Workflows"]
   },
   {
+    title: "Positivus",
+    summary:
+      "High-impact digital marketing agency landing page transformed from Figma design mockups into a responsive Next.js application.",
+    bullets: [
+      "Converted intricate digital agency Figma UI designs into pixel-perfect, interactive Next.js components.",
+      "Integrated custom illustrations, dynamic service sections, and high-converting CTA layouts with Tailwind CSS.",
+      "Ensured fluid responsiveness, clean component architecture, and modern UX design standards across all viewports.",
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Figma", "UI/UX"],
+    image: "/projects/positivus.png",
+    images: ["/projects/positivus.png"],
+    isFeatured: false,
+    stats: [
+      { icon: "🎯", text: "Agency Landing Page" },
+      { icon: "🎨", text: "Figma to Next.js" },
+      { icon: "✨", text: "Modern Tailwind Design" },
+    ],
+    badges: ["Frontend", "UI/UX", "Landing Page"],
+  },
+  {
+    title: "iExec",
+    summary:
+      "Modern, responsive web application and landing page converted from Figma designs into a clean Next.js and Tailwind CSS frontend.",
+    bullets: [
+      "Translated complex Figma UI/UX designs into pixel-perfect, accessible, and fully responsive web components.",
+      "Built clean navigation, modern typography, hero sections, and data visualization UI using Tailwind CSS.",
+      "Structured modular Next.js architecture optimized for fast load performance and cross-device responsiveness.",
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Figma", "UI/UX"],
+    image: "/projects/iexec.png",
+    images: ["/projects/iexec.png"],
+    isFeatured: false,
+    stats: [
+      { icon: "🎨", text: "Figma to Code" },
+      { icon: "📱", text: "Responsive UI/UX" },
+      { icon: "⚡", text: "Next.js & Tailwind CSS" },
+    ],
+    badges: ["Frontend", "UI/UX", "Figma to Next.js"],
+  },
+  {
     title: "Gull",
     summary:
       "Webhook orchestration and forwarding platform built for developers to inspect, transform, route, and replay webhooks with confidence.",
@@ -67,5 +107,6 @@ export const PROJECTS: ProjectProp[] = [
     badges: ["Data Science", "Machine Learning", "EDA"]
   }
 ];
+
 
 

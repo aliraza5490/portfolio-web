@@ -22,7 +22,7 @@ export const EXPERIENCE: ExperienceProp[] = [
       "Docker",
       "AWS",
     ],
-    logo: "/logos/building.svg",
+    logo: "/logos/cyberify.png",
   },
   {
     dates: "Jul 2020 — Dec 2024",
